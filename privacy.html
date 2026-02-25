@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personvern — RIVL</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #0D0F14;
+      color: #E8E9ED;
+      min-height: 100vh;
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+
+    .back {
+      display: inline-block;
+      color: #00BFA5;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .back:hover { text-decoration: underline; }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #00BFA5, #00E5CC);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .updated {
+      color: #5E5F73;
+      font-size: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #E8E9ED;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p, li {
+      color: #B0B3BE;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    li { margin-bottom: 0.4rem; }
+
+    a { color: #00BFA5; }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #2A2D38;
+      text-align: center;
+      color: #5E5F73;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="/" class="back">&larr; Tilbake til RIVL</a>
+
+    <h1>Personvern</h1>
+    <p class="updated">Sist oppdatert: Februar 2026</p>
+
+    <h2>1. Hva vi samler inn</h2>
+    <p>Når du bruker RIVL, samler vi inn:</p>
+    <ul>
+      <li>Kontoinformasjon (navn, e-post)</li>
+      <li>Treningsdata (aktivitetstype, varighet, distanse, puls)</li>
+      <li>Deltakelse i konkurranser og kampanjer</li>
+      <li>Data fra tilkoblede tredjepartstjenester (Strava, Garmin Connect) når du velger å koble dem til</li>
+    </ul>
+
+    <h2>2. Tredjepartsintegrasjoner</h2>
+    <p>Når du kobler til Strava eller Garmin Connect, mottar vi:</p>
+    <ul>
+      <li>Aktivitetsoppsummeringer (type, varighet, distanse)</li>
+      <li>Vi henter IKKE hele aktivitetshistorikken din — kun nye aktiviteter opprettet etter tilkobling</li>
+    </ul>
+    <p>Du kan koble fra disse tjenestene når som helst fra profilinnstillingene. Ved frakobling slutter vi å motta nye data, men beholder tidligere synkroniserte aktivitetslogger.</p>
+
+    <h2>3. Hvordan vi bruker dataene</h2>
+    <ul>
+      <li>Spore treningsfremgang i konkurranser og kampanjer</li>
+      <li>Vise resultatlister og lagstatistikk</li>
+      <li>Muliggjøre validering av gjennomførte økter</li>
+      <li>Synkronisere aktivitetsdata mellom tilkoblede tjenester</li>
+    </ul>
+
+    <h2>4. Datalagring</h2>
+    <p>Data lagres sikkert via Supabase (hostet på AWS i EU). Tilgang kontrolleres gjennom sikkerhetspolicyer på radnivå (Row Level Security).</p>
+
+    <h2>5. Datadeling</h2>
+    <p>Vi selger eller deler IKKE personopplysningene dine med tredjeparter. Andre brukere kan kun se:</p>
+    <ul>
+      <li>Visningsnavnet ditt</li>
+      <li>Konkurranseresultater du deltar i</li>
+    </ul>
+
+    <h2>6. Dine rettigheter</h2>
+    <p>Du kan når som helst:</p>
+    <ul>
+      <li>Eksportere dine data (fra Profil → Innstillinger)</li>
+      <li>Slette kontoen din og all tilknyttet data</li>
+      <li>Koble fra tredjepartsintegrasjoner</li>
+    </ul>
+
+    <h2>7. Kontakt</h2>
+    <p>Spørsmål om personvern? Kontakt oss på <a href="mailto:post@getrivl.app">post@getrivl.app</a>.</p>
+
+    <footer>
+      &copy; 2026 RIVL
+    </footer>
+  </div>
+</body>
+</html>

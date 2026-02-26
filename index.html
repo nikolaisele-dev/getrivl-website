@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RIVL — Treningskonkurranser</title>
-  <meta name="description" content="RIVL gjør trening til konkurranse. Opprett utfordringer, inviter venner, og følg fremgangen i sanntid.">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <title>RIVL — Competition Training App</title>
+  <meta name="description" content="RIVL turns training into competition. Create challenges, invite friends, and track progress in real time.">
+  <link rel="icon" href="logo.png">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -30,15 +30,10 @@
       max-width: 640px;
     }
 
-    .logo {
-      font-size: 3.5rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #00BFA5, #00E5CC);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+    .logo-img {
+      width: 180px;
+      height: auto;
+      margin-bottom: 1.5rem;
     }
 
     .tagline {
@@ -118,45 +113,45 @@
 
     @media (max-width: 480px) {
       .features { grid-template-columns: 1fr; }
-      .logo { font-size: 2.5rem; }
+      .logo-img { width: 140px; }
       .tagline { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
   <div class="hero">
-    <div class="logo">RIVL</div>
-    <div class="tagline">Treningskonkurranser for alle</div>
+    <img src="logo.png" alt="RIVL" class="logo-img">
+    <div class="tagline">Competition training for everyone</div>
     <p class="description">
-      Opprett konkurranser og kampanjer, inviter venner og lag, og følg fremgangen i sanntid.
-      Koble til Strava og Garmin for automatisk registrering av treningsøkter.
+      Create competitions and campaigns, invite friends and teams, and track progress in real time.
+      Connect Strava and Garmin for automatic workout registration.
     </p>
     <div class="features">
       <div class="feature">
         <div class="feature-icon">🏆</div>
-        <div class="feature-title">Konkurranser</div>
-        <div class="feature-desc">Opprett HYROX-inspirerte konkurranser med segmenter og validering</div>
+        <div class="feature-title">Competitions</div>
+        <div class="feature-desc">Create HYROX-inspired competitions with segments and validation</div>
       </div>
       <div class="feature">
         <div class="feature-icon">📊</div>
-        <div class="feature-title">Kampanjer</div>
-        <div class="feature-desc">Langvarige utfordringer med lagkonkurranse og leaderboards</div>
+        <div class="feature-title">Campaigns</div>
+        <div class="feature-desc">Long-running challenges with team competition and leaderboards</div>
       </div>
       <div class="feature">
         <div class="feature-icon">⌚</div>
-        <div class="feature-title">Integrasjoner</div>
-        <div class="feature-desc">Automatisk sync fra Strava og Garmin Connect</div>
+        <div class="feature-title">Integrations</div>
+        <div class="feature-desc">Automatic sync from Strava and Garmin Connect</div>
       </div>
       <div class="feature">
         <div class="feature-icon">👥</div>
-        <div class="feature-title">Lag & venner</div>
-        <div class="feature-desc">Inviter med delekode, følg hverandres fremgang</div>
+        <div class="feature-title">Teams & friends</div>
+        <div class="feature-desc">Invite with share code, follow each other's progress</div>
       </div>
     </div>
-    <div class="badge">Kommer snart til iOS og Android</div>
+    <div class="badge">Coming soon to iOS and Android</div>
   </div>
   <footer>
-    &copy; 2026 RIVL &middot; <a href="/privacy">Personvern</a>
+    &copy; 2026 RIVL &middot; <a href="/privacy">Privacy Policy</a>
   </footer>
 </body>
 </html>

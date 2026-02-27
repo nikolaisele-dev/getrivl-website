@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy — RIVL</title>
+  <title>Personvernerklæring — RIVL</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -35,24 +35,29 @@
       font-size: 2rem;
       font-weight: 700;
       margin-bottom: 0.5rem;
-      background: linear-gradient(135deg, #1B7FB5, #2AACED);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #E8E9ED;
     }
 
     .updated {
       color: #5E5F73;
       font-size: 0.85rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
     }
 
     h2 {
-      font-size: 1.15rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #E8E9ED;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       margin-bottom: 0.75rem;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #E8E9ED;
+      margin-top: 1.25rem;
+      margin-bottom: 0.4rem;
     }
 
     p, li {
@@ -69,6 +74,36 @@
     li { margin-bottom: 0.4rem; }
 
     a { color: #2A9FD6; }
+    a:hover { text-decoration: underline; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 0.75rem 0 1rem;
+    }
+
+    th {
+      text-align: left;
+      color: #E8E9ED;
+      font-weight: 600;
+      padding: 0.5rem 0.75rem 0.5rem 0;
+      border-bottom: 1px solid #2A2D38;
+    }
+
+    td {
+      color: #B0B3BE;
+      padding: 0.5rem 0.75rem 0.5rem 0;
+      border-bottom: 1px solid #1E2028;
+      vertical-align: top;
+    }
+
+    .note {
+      color: #B0B3BE;
+      font-size: 0.9rem;
+    }
+
+    .bold { font-weight: 600; color: #E8E9ED; }
 
     footer {
       margin-top: 3rem;
@@ -82,59 +117,224 @@
 </head>
 <body>
   <div class="container">
-    <a href="/" class="back">&larr; Back to RIVL</a>
+    <a href="/" class="back">&larr; Tilbake til RIVL</a>
 
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: February 2026</p>
+    <h1>Personvernerklæring for RIVL</h1>
+    <p class="updated">Sist oppdatert: februar 2026</p>
 
-    <h2>1. What We Collect</h2>
-    <p>When you use RIVL, we collect:</p>
+    <!-- 1 -->
+    <h2>1. Behandlingsansvarlig</h2>
+    <p>
+      Høns Invest AS<br>
+      Kreklingen 9, 6823 Sandane<br>
+      E-post: <a href="mailto:contact@getrivl.app">contact@getrivl.app</a>
+    </p>
+
+    <!-- 2 -->
+    <h2>2. Hvilke opplysninger vi samler inn</h2>
+
+    <h3>Kontoinformasjon</h3>
     <ul>
-      <li>Account information (name, email address)</li>
-      <li>Workout data (activity type, duration, distance, heart rate)</li>
-      <li>Competition and campaign participation data</li>
-      <li>Data from connected third-party services (Strava, Garmin Connect) when you choose to link them</li>
+      <li>Navn, e-postadresse og profilbilde</li>
+      <li>Telefonnummer (ved Vipps-innlogging)</li>
     </ul>
 
-    <h2>2. Third-Party Integrations</h2>
-    <p>When you connect Strava or Garmin Connect, we receive:</p>
+    <h3>Trenings- og helsedata</h3>
     <ul>
-      <li>Activity summaries (type, duration, distance)</li>
-      <li>We do NOT access your full activity history — only new activities created after you connect</li>
-    </ul>
-    <p>You can disconnect these services at any time from your profile settings. Upon disconnection, we stop receiving new data but retain previously synced activity logs.</p>
-
-    <h2>3. How We Use Your Data</h2>
-    <ul>
-      <li>Track workout progress in competitions and campaigns</li>
-      <li>Display leaderboards and team standings</li>
-      <li>Enable validation of completed sessions</li>
-      <li>Synchronize activity data between connected services</li>
+      <li>Treningsøkter, treningstype, varighet, distanse og pulsmålinger</li>
+      <li>Konkurranse- og kampanjeresultater</li>
+      <li>Egenvurderte prestasjoner og notater</li>
     </ul>
 
-    <h2>4. Data Storage</h2>
-    <p>Data is stored securely via Supabase (hosted on AWS in the EU). Access is controlled through row-level security policies.</p>
-
-    <h2>5. Data Sharing</h2>
-    <p>We do NOT sell or share your personal data with third parties. Other users can only see:</p>
+    <h3>Tekniske opplysninger</h3>
     <ul>
-      <li>Your display name</li>
-      <li>Competition results you participate in</li>
+      <li>Enhets-ID, operativsystem og appversjon</li>
+      <li>Push-varslingstoken (for å sende relevante varsler)</li>
+      <li>IP-adresse og tidssone</li>
     </ul>
 
-    <h2>6. Your Rights</h2>
-    <p>You can at any time:</p>
+    <h3>Betalingsinformasjon</h3>
     <ul>
-      <li>Export your data (from Profile &rarr; Settings)</li>
-      <li>Delete your account and all associated data</li>
-      <li>Disconnect third-party integrations</li>
+      <li>Betalingstransaksjon og betalingshistorikk</li>
+      <li>Private brukere betaler via Vipps – vi lagrer ikke kortopplysninger</li>
+      <li>Bedriftskunder betaler via Stripe – vi lagrer ikke kortopplysninger</li>
     </ul>
 
-    <h2>7. Contact</h2>
-    <p>Questions about privacy? Contact us at <a href="mailto:contact@getrivl.app">contact@getrivl.app</a>.</p>
+    <!-- 3 -->
+    <h2>3. Formål og rettslig grunnlag (GDPR art. 6 og art. 9)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Formål</th>
+          <th>Rettslig grunnlag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Opprette og administrere konto</td>
+          <td>Avtale (art. 6 nr. 1 b)</td>
+        </tr>
+        <tr>
+          <td>Lagre og vise treningsøkter og resultater</td>
+          <td>Avtale (art. 6 nr. 1 b)</td>
+        </tr>
+        <tr>
+          <td>Sende push-varsler du har valgt å motta</td>
+          <td>Samtykke (art. 6 nr. 1 a)</td>
+        </tr>
+        <tr>
+          <td>Behandle betalinger fra private (Vipps)</td>
+          <td>Avtale (art. 6 nr. 1 b)</td>
+        </tr>
+        <tr>
+          <td>Behandle betalinger fra bedrifter (Stripe)</td>
+          <td>Avtale (art. 6 nr. 1 b)</td>
+        </tr>
+        <tr>
+          <td>Forbedre appen og feilsøke</td>
+          <td>Berettiget interesse (art. 6 nr. 1 f)</td>
+        </tr>
+        <tr>
+          <td>Overholde lovpålagte plikter</td>
+          <td>Rettslig forpliktelse (art. 6 nr. 1 c)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="note">
+      <span class="bold">Helsedata (art. 9 nr. 2 a):</span> Pulsmålinger og annen helsedata
+      behandles kun med ditt eksplisitte samtykke, gitt ved opprettelse av konto.
+      Du kan trekke samtykket tilbake når som helst.
+    </p>
+
+    <!-- 4 -->
+    <h2>4. Tredjeparter vi deler data med</h2>
+
+    <h3>Supabase (infrastruktur og database)</h3>
+    <p>
+      Databasen og autentiseringstjenesten driftes av Supabase, Inc., med data lagret på
+      AWS EU-West-1 (Irland). Supabase behandler data som databehandler på vegne av oss,
+      og det er inngått databehandleravtale (DPA).
+    </p>
+
+    <h3>Vipps MobilePay (innlogging og betaling for private)</h3>
+    <p>
+      Vipps brukes på to måter: som innloggingsmetode og som betalingsløsning for private
+      brukere som oppgraderer til betalt plan. Ved innlogging deler Vipps kun det du
+      eksplisitt godkjenner (typisk navn, e-post og telefonnummer). Ved betaling behandler
+      Vipps transaksjonen direkte – vi mottar kun bekreftelse på gjennomført betaling,
+      ikke kortopplysninger.
+    </p>
+    <p>Vipps sin personvernerklæring: <a href="https://vipps.no/privacypolicy" target="_blank" rel="noopener noreferrer">vipps.no/privacypolicy</a></p>
+
+    <h3>Stripe (betaling for bedrifter)</h3>
+    <p>
+      Bedriftskunder betaler via Stripe, Inc. Vi sender kun nødvendig informasjon
+      (transaksjonsbeløp og tilhørende ordre-ID) til Stripe. Kortopplysninger behandles
+      utelukkende av Stripe og lagres aldri hos oss. Stripe er sertifisert etter PCI DSS.
+    </p>
+    <p>Stripes personvernerklæring: <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">stripe.com/privacy</a></p>
+
+    <p><strong>Vi selger ikke dine personopplysninger til tredjepart.</strong></p>
+
+    <!-- 5 -->
+    <h2>5. Lagring og sletting</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Datatype</th>
+          <th>Lagringstid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Kontoinformasjon</td>
+          <td>Inntil du sletter kontoen</td>
+        </tr>
+        <tr>
+          <td>Treningsøkter og resultater</td>
+          <td>Se note under</td>
+        </tr>
+        <tr>
+          <td>Push-varsler (token)</td>
+          <td>Inntil du trekker samtykke</td>
+        </tr>
+        <tr>
+          <td>Betalingshistorikk</td>
+          <td>5 år etter transaksjonen (regnskapslovens krav)</td>
+        </tr>
+        <tr>
+          <td>Systemlogger</td>
+          <td>90 dager</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p><span class="bold">Hva skjer med treningsøkter og konkurranseresultater ved kontosletting</span></p>
+    <p>
+      Når du sletter kontoen din, slettes alle personopplysninger — navn, e-post, profilbilde
+      og alle private data — umiddelbart og fullstendig.
+    </p>
+    <p>
+      Treningsøkter som er registrert i en kampanje eller konkurranse, anonymiseres og
+      beholdes utelukkende for å ivareta statistikkens integritet for øvrige deltakere og
+      arrangøren. Disse vises videre som «Slettet bruker» og kan ikke knyttes tilbake til deg.
+    </p>
+    <p>Anonymiserte data regnes ikke som personopplysninger etter GDPR art. 4 nr. 1.</p>
+
+    <!-- 6 -->
+    <h2>6. Dine rettigheter</h2>
+    <p>Du har rett til å:</p>
+    <ul>
+      <li><span class="bold">Innsyn</span> – se hvilke opplysninger vi har om deg (art. 15)</li>
+      <li><span class="bold">Retting</span> – korrigere feil opplysninger (art. 16)</li>
+      <li><span class="bold">Sletting</span> – be om at opplysningene slettes («retten til å bli glemt», art. 17)</li>
+      <li><span class="bold">Begrensning</span> – begrense behandlingen (art. 18)</li>
+      <li><span class="bold">Dataportabilitet</span> – motta dine data i maskinlesbart format (art. 20)</li>
+      <li><span class="bold">Innsigelse</span> – protestere mot behandling basert på berettiget interesse (art. 21)</li>
+      <li><span class="bold">Trekke tilbake samtykke</span> – uten at dette påvirker lovligheten av behandlingen som skjedde før tilbaketrekkingen</li>
+    </ul>
+    <p>Send forespørsler til: <a href="mailto:contact@getrivl.app">contact@getrivl.app</a></p>
+    <p>
+      Du har også rett til å klage til <a href="https://datatilsynet.no" target="_blank" rel="noopener noreferrer">Datatilsynet</a>
+      (datatilsynet.no) dersom du mener vi behandler dine opplysninger i strid med GDPR.
+    </p>
+
+    <!-- 7 -->
+    <h2>7. Sikkerhet</h2>
+    <p>Vi bruker følgende sikkerhetstiltak:</p>
+    <ul>
+      <li>Kryptert overføring (TLS/HTTPS)</li>
+      <li>Kryptering av data i ro (AES-256 via Supabase/AWS)</li>
+      <li>Tilgangskontroll (Row-Level Security i databasen)</li>
+      <li>To-faktor-autentisering på infrastruktur</li>
+    </ul>
+    <p>
+      Ved et sikkerhetsbrudd som medfører høy risiko for deg, vil vi varsle deg og
+      Datatilsynet innen 72 timer, jf. GDPR art. 33–34.
+    </p>
+
+    <!-- 8 -->
+    <h2>8. Barn</h2>
+    <p>
+      RIVL er ikke beregnet for personer under 16 år. Vi samler ikke bevisst inn
+      opplysninger fra barn. Opplysninger om en bruker som vi oppdager er under 16 år,
+      vil bli slettet umiddelbart.
+    </p>
+
+    <!-- 9 -->
+    <h2>9. Endringer i denne erklæringen</h2>
+    <p>
+      Vi kan oppdatere denne erklæringen. Vesentlige endringer vil varsles via e-post
+      eller melding i appen, med minst 14 dagers varsel. Dato for siste oppdatering
+      fremgår øverst på siden.
+    </p>
+
+    <!-- 10 -->
+    <h2>10. Kontakt</h2>
+    <p>Spørsmål om personvern: <a href="mailto:contact@getrivl.app">contact@getrivl.app</a></p>
 
     <footer>
-      &copy; 2026 RIVL
+      &copy; 2026 RIVL / Høns Invest AS
     </footer>
   </div>
 </body>

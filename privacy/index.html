@@ -120,7 +120,7 @@
     <a href="/" class="back">&larr; Back to RIVL</a>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: February 2026</p>
+    <p class="updated">Last updated: March 2026</p>
 
     <!-- 1 -->
     <h2>1. Data Controller</h2>
@@ -144,6 +144,7 @@
       <li>Workout sessions, activity type, duration, distance, and heart rate</li>
       <li>Competition and campaign results</li>
       <li>Self-reported performance data and notes</li>
+      <li>Activity data received from connected fitness services (Garmin Connect, Strava, Apple Health) when you choose to link your account</li>
     </ul>
 
     <h3>Technical Information</h3>
@@ -191,6 +192,10 @@
           <td>Contract (Art. 6(1)(b))</td>
         </tr>
         <tr>
+          <td>Syncing workout data with connected fitness services (Garmin, Strava, Apple Health)</td>
+          <td>Consent (Art. 6(1)(a))</td>
+        </tr>
+        <tr>
           <td>Improving the app and troubleshooting</td>
           <td>Legitimate interest (Art. 6(1)(f))</td>
         </tr>
@@ -234,6 +239,66 @@
     </p>
     <p>Stripe privacy policy: <a href="https://stripe.com/privacy" target="_blank" rel="noopener noreferrer">stripe.com/privacy</a></p>
 
+    <h3>Garmin Connect (fitness device integration)</h3>
+    <p>
+      If you choose to connect your Garmin account, RIVL exchanges data with Garmin Connect
+      via Garmin's Health API, Activity API, and Training API using an OAuth 1.0a authorisation
+      that you explicitly approve. The integration works both ways:
+    </p>
+    <ul>
+      <li><strong>From Garmin to RIVL:</strong> completed activity data (duration, heart rate,
+        timestamps) is sent to RIVL so we can display it alongside your competition results.</li>
+      <li><strong>From RIVL to Garmin:</strong> structured workout plans (exercise names, durations,
+        distances) can be pushed to your Garmin device so you can follow competition segments on
+        your watch. You can also export completed sessions as .FIT files for manual import.</li>
+    </ul>
+    <p>
+      Only the data necessary for these purposes is shared. We store your Garmin OAuth tokens
+      securely in our database so we do not need to ask you to re-authorise each time. We never
+      share your Garmin data with any other third party.
+    </p>
+    <p>
+      You can disconnect Garmin at any time from the Profile &gt; Integrations screen in the app.
+      When you disconnect, your OAuth tokens are deleted immediately. Activity data already imported
+      into RIVL remains part of your account (and is deleted if you delete your account). Data
+      already exported to Garmin remains in your Garmin account and is governed by Garmin's
+      privacy policy.
+    </p>
+    <p>Garmin privacy policy: <a href="https://www.garmin.com/en-US/privacy/connect/" target="_blank" rel="noopener noreferrer">garmin.com/privacy/connect</a></p>
+
+    <h3>Strava (fitness activity sync)</h3>
+    <p>
+      If you choose to connect your Strava account, RIVL can upload completed workout sessions
+      to your Strava profile as manual activities (activity name, duration, and description).
+      We also receive activity data from Strava via webhook so it can count towards campaigns.
+    </p>
+    <p>
+      Only the data necessary for these purposes is shared. We store your Strava OAuth tokens
+      securely and refresh them automatically. You can disconnect Strava at any time from
+      Profile &gt; Integrations. When you disconnect, your tokens are deleted immediately.
+    </p>
+    <p>Strava privacy policy: <a href="https://www.strava.com/legal/privacy" target="_blank" rel="noopener noreferrer">strava.com/legal/privacy</a></p>
+
+    <h3>Apple Health (on-device health data — iOS only)</h3>
+    <p>
+      If you grant permission, RIVL reads workout and heart rate data from Apple Health
+      on your device. This is used to automatically log activities towards campaigns and
+      to enrich your competition results with heart rate data.
+    </p>
+    <p>
+      <strong>Apple Health data never leaves your device</strong> unless you explicitly
+      save a workout session in RIVL — at which point only the specific session data
+      (duration, heart rate, activity type) is sent to our servers. We never read or
+      store data from Apple Health in bulk.
+    </p>
+    <p>
+      You can revoke RIVL's access to Apple Health at any time via iOS Settings &gt;
+      Privacy &amp; Security &gt; Health &gt; RIVL. Revoking access stops all future
+      reads; data already saved to your RIVL account is retained until you delete it
+      or delete your account.
+    </p>
+    <p>Apple privacy policy: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">apple.com/legal/privacy</a></p>
+
     <p><strong>We never sell your personal data to third parties.</strong></p>
 
     <!-- 5 -->
@@ -261,6 +326,10 @@
         <tr>
           <td>Payment history</td>
           <td>5 years after the transaction (statutory accounting requirement)</td>
+        </tr>
+        <tr>
+          <td>Fitness integration tokens (Garmin, Strava) and Apple Health permissions</td>
+          <td>Until you disconnect the integration or delete your account</td>
         </tr>
         <tr>
           <td>System logs</td>

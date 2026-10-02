@@ -43,15 +43,24 @@ def workflow_has_run(repo, workflow, pr, expected_head, expected_base):
         for run in runs:
             if run.get("event") != "pull_request":
                 continue
-            for linked_pr in run.get("pull_requests", []):
-                if linked_pr.get("number") != pr["number"]:
-                    continue
-                head = (linked_pr.get("head") or {}).get("sha")
-                base = (linked_pr.get("base") or {}).get("sha")
-                if head == expected_head and base == expected_base:
-                    return True
-                if head == expected_head and not base:
-                    raise RuntimeError("existing run has unknown base; inspect CI before resubmitting")
+            linked_numbers = [linked_pr.get("number") for linked_pr in run.get("pull_requests", [])]
+            if linked_numbers and pr["number"] not in linked_numbers:
+                continue
+            immutable_head = run.get("head_sha")
+            if not immutable_head:
+                raise RuntimeError(f"run {run.get('id', '?')} has unknown head; inspect CI before resubmitting")
+            if immutable_head != expected_head:
+                continue
+            if not linked_numbers:
+                raise RuntimeError(f"run {run.get('id', '?')} has unknown PR; inspect CI before resubmitting")
+            # GitHub mutates run.pull_requests[].head/base to the PR's current refs.
+            # The workflow's run-name captures the source/base pair at event time.
+            title = run.get("display_title", "")
+            fingerprint = re.fullmatch(r"candidate head=([0-9a-f]{40}) base=([0-9a-f]{40})", title)
+            if not fingerprint or fingerprint.group(1) != immutable_head:
+                raise RuntimeError(f"run {run.get('id', '?')} has unknown base; inspect CI before resubmitting")
+            if fingerprint.group(2) == expected_base:
+                return True
         seen += len(runs)
         if seen >= data["total_count"]:
             return False

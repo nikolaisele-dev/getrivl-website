@@ -83,9 +83,14 @@ Hold PR som draft under arbeid. Kjør målrettede tester og review lokalt. Når
 kilden og basen er en moden kandidat, bruk `scripts/ci/submit-candidate.py`
 med de reviewede `--expected-head` og `--expected-base` SHA-ene og `--workflow`
 for hver tung kandidat-workflow i `.github/workflows/`. Den kontrollerer lokal
-HEAD, åpen PR og fjern SHA-par, unngår duplikatkjøring av de navngitte tunge
-workflowene for samme kandidat, og sender `ready_for_review` (ved behov via
-draft). Ny kilde eller base krever ny review og innsending. Et draft-/sync-steg
+HEAD, åpen PR og fjern SHA-par. Hver tung workflow skal sette `run-name` til
+`candidate head=<head SHA> base=<base SHA>` fra PR-eventens SHA-er; hjelperen
+bruker kjøringens uforanderlige `head_sha` og `display_title` for å unngå
+duplikatkjøring. GitHubs `pull_requests[].head/base` på gamle kjøringer kan
+endre seg og er ikke kandidatbevis. Ved gammel kjøring med samme head uten
+fingeravtrykk stopper hjelperen for CI-eierens kontroll. Den sender
+`ready_for_review` (ved behov via draft). Ny kilde eller base krever ny review
+og innsending. Et draft-/sync-steg
 gir ikke tung CI eller et grønt required check. Ved delvis, kansellert eller
 feilet kjøring undersøker CI-eieren årsaken og starter relevant kjøring
 eksplisitt; manuelt `workflow_dispatch` er en reservevei.
@@ -94,6 +99,12 @@ eksplisitt; manuelt `workflow_dispatch` er en reservevei.
 dokumenterer feil og løsning på samme oppgave/PR, og verifiserer endelig kilde-
 og base-SHA før merge. Daglig `main`-kjøring dekker integrasjon uten full suite
 ved hvert main-push. Behold eksisterende sjekknavn og beskyttelsesgater.
+
+Før første produksjonsaktivering fastsettes en release-SHA og gjennomføres en
+uavhengig helkodegjennomgang, DB-/RLS-kontroll, ende-til-ende-test av kritiske
+flyter og fysisk QA på native enhet der appen krever det. Knytt funn og bevis
+til samme release-SHA; en endret SHA eller base krever ny vurdering av berørt
+bevis før akseptanse.
 
 Én integrator og én CI-eier; unngå samtidige fullsuiter/Docker-stakker på samme
 maskin. Utdaterte testkjøringer kan kanselleres; produksjonsoperasjoner følger

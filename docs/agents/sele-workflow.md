@@ -100,7 +100,7 @@ dokumenterer feil og løsning på samme oppgave/PR, og verifiserer endelig kilde
 og base-SHA før merge. Daglig `main`-kjøring dekker integrasjon uten full suite
 ved hvert main-push. Behold eksisterende sjekknavn og beskyttelsesgater.
 
-Før første produksjonsaktivering fastsettes en release-SHA og gjennomføres en
+Før lansering til eksterne brukere fastsettes en release-SHA og gjennomføres en
 uavhengig helkodegjennomgang, DB-/RLS-kontroll, ende-til-ende-test av kritiske
 flyter og fysisk QA på native enhet der appen krever det. Knytt funn og bevis
 til samme release-SHA; en endret SHA eller base krever ny vurdering av berørt

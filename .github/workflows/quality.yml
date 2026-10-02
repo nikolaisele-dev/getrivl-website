@@ -1,0 +1,30 @@
+name: Static quality
+
+on:
+  pull_request:
+    types: [ready_for_review]
+  workflow_dispatch:
+  schedule:
+    - cron: "7 5 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}-${{ github.event_name == 'pull_request' && github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+      - name: Verify event contract
+        run: python3 -B scripts/ci/test-workflow-events.py
+      - name: Test static site checker
+        run: python3 -B scripts/ci/test-static-site.py
+      - name: Check published HTML and local references
+        run: python3 -B scripts/ci/check-static-site.py

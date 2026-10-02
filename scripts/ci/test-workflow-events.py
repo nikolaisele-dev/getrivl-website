@@ -10,6 +10,7 @@ SECURITY = [name for name in ('gitleaks.yml', 'trufflehog.yml', 'secret-scan.yml
 EXPECTED_JOBS = {'quality'}
 MERGE_QUEUE = False
 BASELINE = None
+EXPECTED_RUN_NAME = "candidate head=${{ github.event.pull_request.head.sha || github.sha }} base=${{ github.event.pull_request.base.sha || 'none' }}"
 
 
 def block(source, key):
@@ -48,11 +49,21 @@ def selected(source, event, *, action=None, branch='main'):
     return True
 
 
+def run_name(source):
+    match = re.search(r'^run-name: >-\n  (.+)$', source, re.M)
+    return match.group(1) if match else None
+
+
 def jobs(source):
     return set(re.findall(r'^  ([\w-]+):\s*$', '\n'.join(block(source, 'jobs')), re.M))
 
 
 class WorkflowEventContract(unittest.TestCase):
+    def test_run_name_binds_immutable_candidate_head_and_base(self):
+        self.assertEqual(run_name(workflow(HEAVY)), EXPECTED_RUN_NAME)
+        if BASELINE is not None:
+            self.assertEqual(run_name(workflow(BASELINE)), EXPECTED_RUN_NAME)
+
     def test_full_suite_runs_for_candidate_and_operator_events(self):
         source = workflow(HEAVY)
         self.assertTrue(selected(source, 'pull_request', action='ready_for_review'))
